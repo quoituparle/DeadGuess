@@ -1,199 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
-<title>DAG004: cured late filers | SI Alpha Research</title>
-<link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
-<main class="wrap"><a class="back" href="../../index.html">← Owner Reports</a>
-<article class="report owner-report"><header><h1>DAG004: cured late filers</h1><div class="meta"><span class="id">DAG004</span><span>9 min read</span></div></header>
-
-<p><strong>Status:</strong> dead. Expert, 2026-11-04. The mechanism failed, not just a specification. Cured late filers do not recover after the cure; they keep lagging, on exposed 2024-2026 data and on unseen 2016-2024 data. The shortfall was already present before the notice (45.4 percentile, against 45.3 after the cure), so it is a trait of chronically weak names, not an event effect. Scope: NT 10-K and NT 10-Q notices cured within 92 days, quarter-end entry, cells matched on dollar volume and prior return. Month-scale event alpha is ruled out at this scope. A persistent short of thin late filers is outside this line and undetermined, because borrow data is missing.</p>
-<p><strong>Guess:</strong> A late-filing notice (NT 10-K or NT 10-Q) drives mandate- and risk-limited holders out; once the late report is filed the uncertainty is resolved, but the discount clears only over the following months as holders and attention return, so cured late filers earn excess return that fades over months.</p>
-<h2>Simplified</h2>
-<p>We tested whether companies that file a late-filing notice and then file the late report recover over the next months. They do not: they keep falling behind similar stocks, by about 12% a quarter in 2024-2026 and about 4-6% a quarter in 2016-2024. Shorting them looked profitable on paper, but these companies were already lagging before the notice, so the notice marks weak companies rather than a shock that wears off. The large, easy-to-borrow names showed no profit, and most of the gain sits in small stocks that are often expensive or impossible to borrow. This closes the idea for month-scale alpha.</p>
-<h2>Route</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Study</th>
-<th>Reason</th>
-<th align="right">Variants</th>
-<th>Change</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DA009</td>
-<td>initial</td>
-<td align="right">2</td>
-<td>First round: long cured late filers (NT 10-K or NT 10-Q in the prior 92 days, every report filed by t-1) against dollar-volume and prior-return cells, seven cached quarter-end windows.</td>
-</tr>
-<tr>
-<td>DA010</td>
-<td>returns</td>
-<td align="right">1</td>
-<td>Second round: the opposite side of DA009, with pre-notice and notice-quarter percentiles of the cured names and short-spread arithmetic under declared borrow fees, on DA009's frozen events.</td>
-</tr>
-<tr>
-<td>DA011</td>
-<td>expert</td>
-<td align="right">2</td>
-<td>Third round: frozen 2016-2024 replication of the cured-late-filer short side on unseen history (34 quarter ends, 30 with at least 15 names), with Alpaca daily bars, all corporate actions, I2 identity and Expert-reviewed gates S1-S6.</td>
-</tr>
-</tbody></table></div>
-<h2>Full Professional Report</h2>
-<h2>DAG004 — Cured late filers</h2>
-<p><strong>Closed <code>dead</code> by Expert on 2026-11-04.</strong> The Guess held that a late-filing notice (NT 10-K or NT 10-Q) drives restricted holders out, and that once the late report is filed the discount clears over months. It does not.</p>
-<p>Cured late filers keep lagging matched stocks: by 11.9% a quarter on the exposed 2024-2026 windows, and at the 45.3rd percentile of their cells on unseen 2016-2024 data. The opposite reading was that a short captures a month-scale event effect. It also fails, because the same names already sat at the 45.4th percentile before the notice. The notice marks chronically weak companies rather than a shock that fades.</p>
-<p>A persistent short of thin late filers is outside this line. Its value is undetermined, since borrow fees are missing and break-even borrow is about 20% a year.</p>
-<h2>Route</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Round</th>
-<th>Study</th>
-<th>Change and reason</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>DA009</td>
-<td>Long cured late filers vs dollar-volume and prior-return cells, 7 exposed windows (initial)</td>
-<td>No pass, opposite sign: -11.9%/q net, 0 of 7 windows, 40.4th percentile, slope 0.03</td>
-</tr>
-<tr>
-<td>2</td>
-<td>DA010</td>
-<td>Timing and short side of round 1's names (returns)</td>
-<td>Promising lead. After Expert review (CORRECTION_001) the timing pass is not established, and the liquid spread is +13.2%/q without one outlier</td>
-</tr>
-<tr>
-<td>3</td>
-<td>DA011</td>
-<td>Frozen 2016-2024 short-side replication on unseen history, after two Expert reviews and owner approval of 34 SEC and 1,396 Alpaca requests (expert)</td>
-<td>No pass: S1-S4 replicate after CORRECTION_006; S5 pre-notice and S6 borrowable tier fail</td>
-</tr>
-</tbody></table></div>
-<h2>Round 3 in detail</h2>
-<ul>
-<li><strong>Coverage.</strong> 30 of 34 quarter ends from 2016-06-30 to 2024-09-30 had at least 15 cured names, 803 name-windows in total.</li>
-<li><strong>Identity.</strong> Filers were mapped to Alpaca symbols by the dated prefix rule I2, with precision 0.997 at 2024-12-31.</li>
-<li><strong>Split audit.</strong> It left 0.75% of symbols unresolved after declared repairs.</li>
-</ul>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Gate</th>
-<th>Result</th>
-<th>Pass</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>S1 rank</td>
-<td>45.31, window t 3.43</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>S2 short spread at 3%/yr borrow</td>
-<td>+4.37%/q market-adjusted, t 3.00, 22 of 30 windows</td>
-<td>yes (no before CORRECTION_006)</td>
-</tr>
-<tr>
-<td>S3 market slope</td>
-<td>-0.08</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>S4 fade</td>
-<td>Q+1/Q+2 4.60% vs Q+3/Q+4 2.18%, Newey-West t 3.26; month-1 share 0.31</td>
-<td>yes (no before CORRECTION_006)</td>
-</tr>
-<tr>
-<td>S5 pre-notice</td>
-<td>45.43 against a 47.65 floor</td>
-<td>no</td>
-</tr>
-<tr>
-<td>S6 borrowable tier (≥$20m volume, ≥$300m cap)</td>
-<td>-0.88%/q, 159 names</td>
-<td>no</td>
-</tr>
-</tbody></table></div>
-<ul>
-<li><strong>Notice quarter.</strong> The percentile there was 46.3, so the profile is flat from before the notice through the cure.</li>
-<li><strong>Borrow.</strong> The C0 spread is +4.8%/q at 0.5%/yr borrow, 0.0% at 20%/yr and -5.1% at 40%/yr.</li>
-<li><strong>Uncured filers.</strong> They sat near the median at 49.3.</li>
-</ul>
-<h2>Problems a reader should weigh</h2>
-<ul>
-<li><strong>CORRECTION_006.</strong> It fixed a false implied split on SIGM's 2018 liquidating distribution, a defect created by the repair rule added before events were joined. The fix was found by auditing only the worst outlier after results. It decides which declared reading applies, <code>dead</code> for this line rather than <code>open</code> blocked on borrow evidence, but not the verdict, which rests on S5. The favorable tail was not audited, so S2's t may be overstated.</li>
-<li><strong>S6.</strong> It has 1-15 names a window and a window standard error near 2.4%/q, so the borrowable tier's value is neither shown nor ruled out.</li>
-<li><strong>S5.</strong> It admits repeat filers' earlier notices into the pre-notice quarter.</li>
-<li><strong>Selection of the short side.</strong> Round 2 chose the short side after round 1 lost. Round 3 is the independent test.</li>
-<li><strong>Not modelled.</strong> There is no short ledger, locate, recall or payment in lieu. Shares come from balance-sheet counts, and 206 spin-offs were valued at zero.</li>
-</ul>
-<h2>Next</h2>
-<p>None for this Guess. A revival would be a new Guess naming DAG004. It would test first-time notices only and need a pre-notice percentile near 50 on unused history, plus historical borrow fees. DAG003 found the same pattern for 13D subjects: shortfalls in weak-company events tend to be persistent selection, not month-scale decay.</p>
-<h2>Problem</h2>
-<p>Round 2 chose the short side after round 1 lost. In DA011, a repair rule for missing splits created a false gain on a liquidating distribution; the fix (CORRECTION_006) was found by auditing the worst outlier after results and flips S2 and S4 to pass, while the favorable tail was not audited; both versions are kept, and S5 and S6 fail in both. No short ledger or borrow fees exist; the borrowable tier has 1-15 names a window, so S6 has little power. Shares come from balance-sheet counts because FSDS lacks cover-page counts; 206 spin-offs were valued at zero. The pre-notice check admits repeat filers' earlier notices.</p>
-<h2>Next</h2>
-<p>None for this Guess. A revival would be a new Guess naming DAG004 that tests first-time notices only (no notice in the prior year), shows a pre-notice percentile near 50 with a shortfall only after the notice on unused history, and has historical borrow fees for the names traded.</p>
-<hr>
-<h2>Report from Reviewer</h2>
-<p>Reviewer: codex. Generated: 2026-11-04T20:49:37+00:00.</p>
-<h2>Reading of the evidence</h2>
-<p><strong>The supplied numbers reject the long-cure premise in the tested sample. They support broader underperformance, but do not establish a month-scale, executable short opportunity.</strong> I verified summary arithmetic against published window rows; underlying security returns remain unverified.</p>
-<ul>
-<li><strong>DA009:</strong> Cured filers averaged <strong>−11.91% quarterly net matched excess</strong>, with no positive window out of seven and a pooled percentile of <strong>40.39</strong>. Three of the four declared advancement gates failed. This is clear evidence against the original long premise on exposed development data. ([Results]([local path]))</li>
-<li><strong>DA010:</strong> The apparent timing pass was subsequently qualified: events and controls faced different formation-universe conditions. Its short-spread arithmetic also reverses long <strong>net</strong> excess, thereby crediting transaction costs. Charging the stated costs instead gives <strong>9.41% quarterly</strong> at 3% annual borrow, versus <strong>11.16% reported</strong>. This reduces the lead’s magnitude. ([Results]([local path]), [correction]([local path]))</li>
-<li><strong>DA011:</strong> Across 30 usable windows and 803 name-windows, the reported short spread averages <strong>4.19% quarterly</strong>, positive in <strong>22/30</strong> windows. The regression intercept is <strong>4.37%</strong>, conventional t <strong>3.00</strong>, and slope <strong>−0.078</strong>. These figures reconcile with the window rows. However, <strong>S5 fails</strong>: pre-notice percentile <strong>45.43</strong> is already close to post-cure <strong>45.31</strong>, below the required <strong>47.65</strong> floor. <strong>S6 also fails:</strong> the liquid/capitalized tier averages <strong>−0.88% quarterly</strong>. ([Results]([local path]))</li>
-</ul>
-<p><strong>Interpretation:</strong> DA011’s early-versus-late shortfall and 31% first-month share support persistence beyond weeks. But the pre-notice weakness supports a selection explanation, and the registered S1–S3-pass/S5-fail rule rejects the month-scale event reading. The implementability tier independently loses money.</p>
-<h2>Route and overfitting</h2>
-<p>The manifest declares <strong>five variants across three rounds</strong>:</p>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Round</th>
-<th><code>reason_class</code></th>
-<th align="right">Variants</th>
-<th>Assessment</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DA009</td>
-<td><code>initial</code></td>
-<td align="right">2</td>
-<td>Exposed-data screen; explicitly development.</td>
-</tr>
-<tr>
-<td>DA010</td>
-<td><code>returns</code></td>
-<td align="right">1</td>
-<td>Direction reversed after DA009’s losses. Count this as development, not confirmation.</td>
-</tr>
-<tr>
-<td>DA011</td>
-<td><code>expert</code></td>
-<td align="right">2</td>
-<td>Historical replication registered before new returns, according to the records; later corrected after results.</td>
-</tr>
-</tbody></table></div>
-<p>([Manifest]([local path]), each round’s study plan)</p>
-<p>DA011 corrections <strong>001–004</strong>, labelled <code>data</code>, changed acquisition batching, symbol exclusions, split treatment and market-cap inputs. Their recorded timing precedes returns, which limits direct performance tuning, although split repair and share-count substitutions materially change measurement.</p>
-<p>Of the <code>bug</code> corrections, <strong>005</strong> looks like an ordinary indexing fix with no economic change. <strong>006</strong> followed inspection of a losing outlier and materially improved that result. Its explanation is credible: an implied split multiplied shares before crediting a liquidating distribution. This looks more like a data-handling repair than economic retuning, but its new three-day/25% exception was chosen after returns were seen. The corrected evaluation therefore carries development discretion. ([005]([local path]), [006]([local path]))</p>
-<p>The two DA011 freeze records have identical aggregate counts but different event hashes. They establish no aggregate membership-count change; they cannot establish identical constituents or quantify the correction’s full effect.</p>
-<h2>Validity</h2>
-<ul>
-<li><strong>Leakage and timing:</strong> The written rules use notices, cures and financial submissions available before formation. That is sensible. DA011 also explicitly applies formation-universe conditioning to both sides of the pre-notice comparison, addressing DA010’s documented asymmetry. Implementation cannot be checked.</li>
-<li><strong>Selection and inference:</strong> Matching dollar volume and prior returns does not establish the proposed holder-exit mechanism. The near-equal pre- and post-notice weakness is direct contrary evidence. There are 30 time windows, not 803 independent observations; reported window clustering and Newey–West treatment are useful, while S2’s conventional regression t does not establish robustness to serial dependence.</li>
-<li><strong>Split repairs:</strong> Correction 003 converts near-round large price moves into implied splits and treats other unexplained moves as real. This can erase genuine crashes <strong>and rallies</strong>, affecting events and controls differently; it is not uniformly conservative. It also changes how the original 8.8% flagged-name problem is resolved against the 1% stop rule. Missing audits prevent verification of the resulting error rate. ([Correction 003]([local path]))</li>
-<li><strong>Other data assumptions:</strong> Flat unexplained exits and zero-valued unpriceable spin-offs remain material approximations; results count <strong>206 unpriced spin-offs</strong> without exposure attribution. Reported broad-basket signs survive former-SPAC exclusion, own-prefix restriction and adverse control-exit treatment, which is reassuring but does not validate individual marks.</li>
-<li><strong>Costs and execution:</strong> DA011 includes declared transaction costs and total-return corporate-action treatment. Nevertheless, liquidity/capitalization thresholds do not demonstrate borrow availability. At 20% annual borrow the broad spread is approximately zero, and the preferred tier already fails at 3%. Close-based spreads lack locates, recalls, margin, financing and an executable account path. ([Plan]([local path]), [results]([local path]))</li>
-</ul>
-<h2>Could not check</h2>
-<p>All supplied files match their manifest hashes. However, despite the brief’s description, the packet omits the production scripts, raw data, constituent tables, identity/split checks, acquisition logs and pre-correction results. Only replication tests is supplied; its assertions cannot demonstrate the absent implementation’s behavior.</p>
-<p>Consequently, I could not verify historical identity precision, wrong-security admission, acquisition completeness, actual freeze chronology, correction-wide effects, or return construction. There is also an unresolved provenance gap: the described EDGAR acquisition ends at <strong>2023Q4</strong>, while results include <strong>2024</strong> notice/cure cohorts. The packet does not identify their source. ([Brief]([local path]), [test source]([local path]))</p>
-</article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
-</body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <script>location.replace("../../index.html#feed?report=dag004");</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Published SI Alpha Research reports and owner reviews.">
+  <title>SI / Research Workbench</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../components.css">
+  <link rel="stylesheet" href="../../feed.css">
+  <link rel="stylesheet" href="../../documents.css">
+  <script type="module" src="../../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><div class="boot"><b>SI</b><p>Loading Fieldnotes…</p></div></div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Search research"><div id="search-content"></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Research document"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

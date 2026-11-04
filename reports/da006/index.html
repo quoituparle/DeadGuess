@@ -1,54 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
-<title>DA006 — Dated filer-to-symbol map for DAG001 | SI Alpha Research</title>
-<link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
-<main class="wrap"><a class="back" href="../../da.html">← DA Reports</a>
-<article class="report"><header><h1>DA006 — Dated filer-to-symbol map for DAG001</h1><div class="meta"><span class="id">DA006</span><time datetime="2026-11-04">Nov 4, 2026</time><span>2 min read</span></div></header>
-
-<p><strong>The map is accurate but incomplete, so the route does not yet qualify. On the seven cached quarter ends it names the right ticker for 88.1% of the listed universe on average, at least 84.1% in every window, against 90% and 85% required. When it names a listed ticker, that ticker is right 98.9% of the time. The shortfall is coverage: filings whose XBRL file name follows a filing agent's pattern rather than the ticker get no answer. That share is about 3% in 2016-2020 and rises to about 38% in late 2021. This is a feasibility check with no prices read. It is not a performance Batch.</strong></p>
-<h2>Results</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Criterion</th>
-<th>Result</th>
-<th>Required</th>
-<th>Pass</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>C5 recall, R2 (prefix plus dated name changes)</td>
-<td>mean 0.881, minimum 0.841 (2026-06-30)</td>
-<td>0.90 and 0.85</td>
-<td>no</td>
-</tr>
-<tr>
-<td>C6 precision, R2</td>
-<td>0.989</td>
-<td>0.95</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>C7 historical prefix share, nonfinancial filers</td>
-<td>0.96-0.97 in 2016-2018; 0.619 at 2021-09-30 and 2021-12-31, 0.645 at 2022-06-30</td>
-<td>at least 0.658 (90% of 0.731 at 2024-09-30)</td>
-<td>no</td>
-</tr>
-<tr>
-<td>C8 acquisition</td>
-<td>33 of 33 SEC files verified; corporate actions complete in 10 pages</td>
-<td>all</td>
-<td>yes</td>
-</tr>
-</tbody></table></div>
-<p>The prefix alone (R1) has recall 0.874 and precision 0.991, so chaining through Alpaca's 3,492 usable name changes adds only 0.7 points. In each gold window, 143 to 359 universe names have no ticker-form file name, and 115 to 150 get a wrong answer. Of the wrong answers, only 27 to 32 are another listed ticker. The rest are stale or invented mnemonics, such as LVIS for LEVI, ZIONS for ZION, WYN for TNL and TMB for CAG. Share-class roots also miss, for example GOOG for GOOGL and LILA for LILAK.</p>
-<p>The historical pattern is the useful part. Before inline XBRL, almost every filer named its instance file by ticker. From 2019 onward, filing-agent names such as <code>tm2412345</code> spread. So the map is strongest exactly where DAG001 needs new history, in 2016-2020, and weakest in 2021-2023.</p>
-<h2>Method and limits</h2>
-<p>The 33 FSDS files for 2015q4 to 2023q4 (3.05 GB) came from SEC with the owner's stored user agent. Alpaca corporate actions for 2016-01-01 to 2026-11-03 came in 10 pages: 3,719 name changes, 2,068 cash mergers, 3,228 stock mergers and 252 stock-and-cash mergers. All 43 attempts returned HTTP 200, within a reservation of 98. Raw bytes are outside Git in the research cache. Only the SEC submissions table was read, and no price, return or signal was touched. The gold truth is Massive's dated mapping on the DA001 liquid universe, which covers 2024-2026 only, so 2016-2023 accuracy is inferred, not measured. The historical counts include unlisted filers.</p>
-<h2>Next decision</h2>
-<p>This rule stops here, with no change after seeing the gold measure. The block is narrow and needs no new request: a filer with a non-ticker file name can borrow the ticker-form prefix of its own earlier filings. A follow-up rule that does this causally, using only filings accepted on or before the formation, is the next test. If that still fails, the remaining route is the paid Massive plan, which has dated ticker reference data.</p>
-</article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
-</body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <script>location.replace("../../index.html#feed?report=da006");</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Published SI Alpha Research reports and owner reviews.">
+  <title>SI / Research Workbench</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../components.css">
+  <link rel="stylesheet" href="../../feed.css">
+  <link rel="stylesheet" href="../../documents.css">
+  <script type="module" src="../../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><div class="boot"><b>SI</b><p>Loading Fieldnotes…</p></div></div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Search research"><div id="search-content"></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Research document"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

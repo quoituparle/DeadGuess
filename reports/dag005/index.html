@@ -1,173 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
-<title>DAG005: index eligibility crossing | SI Alpha Research</title>
-<link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
-<main class="wrap"><a class="back" href="../../index.html">← Owner Reports</a>
-<article class="report owner-report"><header><h1>DAG005: index eligibility crossing</h1><div class="meta"><span class="id">DAG005</span><span>7 min read</span></div></header>
-
-<p><strong>Status:</strong> dead. Expert, 2026-11-04. The mechanism failed where it could be tested at scale: 2,157 crossing filings above 1 billion USD earned +0.04% gross over 63 sessions (upper 95% bound near +1.6%) and -0.35%/q at quarter-end entry, with no dependence on the size floor. Scope: S&amp;P GAAP-earnings crossers worth at least 1 billion USD, 2017-2024, quarter-end or post-filing entry. Excess above about 1.6% per 63 sessions is ruled out. First crossers (about 10 a year, 80 events) and non-member crossers are undetermined: too few, or index membership data is missing.</p>
-<p><strong>Guess:</strong> A company that newly meets the S&amp;P GAAP earnings rule (positive trailing four-quarter and latest-quarter net income) while above the index size floor becomes eligible for index inclusion; rule-bound and anticipating buyers arrive over later rebalances, so its stock earns excess return that fades over months, while crossers below the floor do not.</p>
-<h2>Simplified</h2>
-<p>We tested whether companies worth over $1 billion that first meet the S&amp;P rule of positive GAAP earnings get bought up by index investors over the following months. Across 2017-2024 they did no better than similar stocks, whether bought at the next quarter end or the day after the filing, and smaller companies that cannot join the index did just as well. True first-time crossers are too rare (about 10 a year) to test separately. This closes the idea.</p>
-<h2>Route</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Study</th>
-<th>Reason</th>
-<th align="right">Variants</th>
-<th>Change</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DA012</td>
-<td>initial</td>
-<td align="right">2</td>
-<td>First round: first GAAP-profitability crossers (trailing four-quarter and latest-quarter net income turning positive) with market cap of at least 1 billion USD, against dollar-volume and prior-return cells, quarter-end entry, 30 windows 2017-2024 on DA011's panel; crossers worth 100 million to 1 billion USD as placebo.</td>
-</tr>
-<tr>
-<td>DA013</td>
-<td>returns</td>
-<td align="right">2</td>
-<td>Second round: event-time entry at the first close after the crossing filing's acceptance, 63-session matched excess against same-cell controls over identical sessions, 2,157 X0 and 1,290 B0 filings 2017-2024.</td>
-</tr>
-<tr>
-<td>DA014</td>
-<td>expert</td>
-<td align="right">0</td>
-<td>Third round per Expert: DA013's crossing filings restricted to first crossers (known ineligible at the eight prior quarter ends and never eligible before), with a returns-blind event count against a declared minimum.</td>
-</tr>
-<tr>
-<td>DA015</td>
-<td>data</td>
-<td align="right">0</td>
-<td>Fourth round: DA014's first-crosser filter with SEC FSDS 2012q1-2015q3 added for the eight-quarter lookback (15 owner-approved requests).</td>
-</tr>
-</tbody></table></div>
-<h2>Full Professional Report</h2>
-<h2>DAG005 — Index-eligibility crossing</h2>
-<p><strong>Closed <code>dead</code> by Expert on 2026-11-04.</strong> The Guess held that a company crossing into eligibility while above the index size floor would draw rule-bound and anticipating buyers, and earn excess return that fades over months. Eligibility is the S&amp;P GAAP earnings rule: positive trailing four-quarter and latest-quarter net income.</p>
-<p>It did not. On 2017-2024 data, crossers worth at least $1 billion matched similar stocks whether bought at the next quarter end (-0.35% a quarter) or at the first close after the crossing filing (+0.04% gross over 63 sessions). Crossers below the floor did no worse.</p>
-<p>True first-time crossers were the purest form of the idea. They number about 10 a year (80 events from 2017 to 2024 even with fundamentals back to 2012), too few to meet the declared test minimum, and they were never evaluated.</p>
-<h2>Route</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Round</th>
-<th>Study</th>
-<th>Change and reason</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>DA012</td>
-<td>Quarter-end entry; crossers ≥ $1B (X0) vs dollar-volume × prior-return cells; $100M-$1B placebo (B0); 30 windows (initial)</td>
-<td>No pass. X0 -0.35%/q, percentile 50.9 (t 1.2), intercept t -0.3; B0 -3.1%/q</td>
-</tr>
-<tr>
-<td>2</td>
-<td>DA013</td>
-<td>Entry at the first close after the crossing filing, 63 sessions vs same-cell controls (returns)</td>
-<td>No pass. X0 +0.04% gross, -0.63% net (t -0.8), percentile 50.6; B0 slightly better</td>
-</tr>
-<tr>
-<td>3</td>
-<td>DA014</td>
-<td>First crossers only, per Expert (expert)</td>
-<td>Data block: 88 events, below the declared 100; no returns</td>
-</tr>
-<tr>
-<td>4</td>
-<td>DA015</td>
-<td>Same, with 15 owner-approved FSDS files for 2012q1-2015q3 (data)</td>
-<td>Data block: 80 events; no returns</td>
-</tr>
-</tbody></table></div>
-<h2>Data and method</h2>
-<ul>
-<li><strong>Data:</strong> FSDS net income for 2012q1-2024q4. Quarters come from 10-Qs, Q4 is the 10-K annual figure minus three quarters, and each value counts from its filing's acceptance date.</li>
-<li><strong>Reused from DA011:</strong> Alpaca Basic daily bars for 2016-2024, the I2 identity map, split repairs, the universe rules and the return walker.</li>
-<li><strong>Controls:</strong> matched on dollar-volume quintile and prior-return decile.</li>
-<li><strong>Costs:</strong> DA009's round trip.</li>
-<li><strong>External requests:</strong> 15 SEC requests, all in DA015.</li>
-</ul>
-<h2>Problems a reader should weigh</h2>
-<ul>
-<li><strong>Eligibility proxy.</strong> It uses FSDS GAAP net income, not S&amp;P's own figures.</li>
-<li><strong>Size floor.</strong> A fixed $1 billion.</li>
-<li><strong>No membership data.</strong> Index membership and announcement history are not cached, so existing members are mixed into X0, and the effect on non-member crossers is undetermined.</li>
-<li><strong>Returns-driven round.</strong> DA013's entry timing was chosen after DA012's null.</li>
-<li><strong>Reused price data.</strong> The 2016-2024 price panel had already been used for DAG004's late-filer cells.</li>
-</ul>
-<h2>Next</h2>
-<p>None for this Guess. A revival would need survivorship-free S&amp;P 1500 membership or addition-announcement history, plus power declared in advance to detect about 2% per 63 sessions on data not yet used.</p>
-<h2>Problem</h2>
-<p>Eligibility comes from FSDS net income with a derived Q4, not S&amp;P's own adjusted numbers; the size floor is a fixed 1 billion USD; index membership and announcements are not cached, so existing members are mixed in. DA013's event timing was chosen after DA012's null. The 2016-2024 price panel was already used for DAG004. First crossers fell short of the declared 100-event minimum (88, then 80), so they were never evaluated.</p>
-<h2>Next</h2>
-<p>None for this Guess. A revival would be a new Guess naming DAG005 that uses survivorship-free S&amp;P 1500 membership or addition-announcement history to isolate non-member crossers, with power declared in advance for about 2% per 63 sessions on unused data.</p>
-<hr>
-<h2>Report from Reviewer</h2>
-<p>Reviewer: codex. Generated: 2026-11-04T21:45:15+00:00.</p>
-<h2>Reading of the evidence</h2>
-<p><strong>The reported tests do not support month-scale, size-dependent excess return. The narrower first-crosser hypothesis remains untested.</strong> I verified the supplied records and their manifest hashes; I could not reproduce the calculations.</p>
-<ul>
-<li><strong>DA012:</strong> Across 30 windows and 2,275 X0 name-windows, mean long net excess was <strong>−0.35%</strong>, positive in 14 windows versus 20 required. The percentile statistic was 50.87 with gate t=1.20; the fade t-statistic was 0.23 and month-one share 1.10. C1, C2 and C4 failed. X0 beat B0 by 2.77 percentage points, but B0 itself lost 3.12% net. That relative advantage does not establish profitable alpha. (Results)</li>
-<li><strong>DA013:</strong> Across 2,157 X0 events in 29 quarter clusters, 63-session gross excess was <strong>+0.038%</strong>, falling to <strong>−0.63% net</strong>, t=−0.83. X0 underperformed B0 by 0.93 percentage points; only E3 passed. The early-versus-late difference had t=1.28, below its gate. The negative month-one share reflects opposite-signed returns around a tiny denominator, providing little evidence of gradual decay. (Results)</li>
-<li><strong>DA014/DA015:</strong> The freeze records report <strong>88 X0 events across 22 quarters</strong>, then <strong>80 across 28</strong>, against a minimum of 100 events across 20 quarters. Both record <code>returns_joined: false</code> and <code>feasible: false</code>, consistent with their stop rules. These are feasibility failures, not return nulls. (DA014 freeze, DA015 freeze)</li>
-</ul>
-<h2>Route and overfitting</h2>
-<p>The manifest declares:</p>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Round</th>
-<th><code>reason_class</code></th>
-<th align="right">Variants</th>
-<th>Assessment</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DA012</td>
-<td><code>initial</code></td>
-<td align="right">2</td>
-<td>Initial X0/placebo screen.</td>
-</tr>
-<tr>
-<td>DA013</td>
-<td><code>returns</code></td>
-<td align="right">2</td>
-<td>Event-time entry explicitly followed DA012’s null and month-one result: this counts as development.</td>
-</tr>
-<tr>
-<td>DA014</td>
-<td><code>expert</code></td>
-<td align="right">0</td>
-<td>First-crosser restriction followed known pooled results, but stopped before subset returns.</td>
-</tr>
-<tr>
-<td>DA015</td>
-<td><code>data</code></td>
-<td align="right">0</td>
-<td>Longer history followed the feasibility shortfall; the minimum remained unchanged and again stopped evaluation.</td>
-</tr>
-</tbody></table></div>
-<p>There are <strong>four declared variants</strong>, including the placebo specifications. DA013 is an adaptive continuation on the same exposed panel, not independent confirmation. DA014–DA015 also refine the sample after results, but the recorded returns-blind stops limit further return-based selection.</p>
-<p>No round carries a <code>bug</code> label, and no correction records are supplied. There is therefore no documented bug fix to assess as disguised retuning.</p>
-<h2>Validity</h2>
-<p><strong>Specified safeguards look reasonable:</strong> acceptance-date availability, entry after acceptance, identical-session control returns, explicit costs, and freezes marked before return joins. Their implementation remains unverified. (DA012 plan, DA013 plan)</p>
-<p>Material limits are:</p>
-<ul>
-<li><strong>Mechanism:</strong> The fixed $1 billion cutoff and profitability rule are proxies. The packet does not establish dated index eligibility, exclude existing members, or document inclusion purchases. Repeat crossers further weaken the connection between the pooled tests and first eligibility.</li>
-<li><strong>Selection and dependence:</strong> DA013 excludes 3,183 of 7,353 crossing filings through prior-quarter universe membership, plus entry and horizon exclusions. Its result applies to that selected population. Quarter clustering addresses common quarter shocks, but repeated issuers and overlapping holding periods may leave dependence across clusters.</li>
-<li><strong>Matching and execution:</strong> Volume/return cells do not establish balance on size, industry or profitability changes. Quarter-old capitalization can also misclassify the event-time tier. Costs of 25/50 bp per side are explicit; close-price execution, capacity and realized impact are assumptions.</li>
-<li><strong>Reporting:</strong> DA012 contains short-oriented fields alongside long-oriented outputs, including opposite signs for the percentile t-statistic. I used the explicit long fields and gate records; the missing code prevents reconciliation.</li>
-</ul>
-<h2>Could not check</h2>
-<p>Despite the brief, the packet contains <strong>no study scripts, study summary, raw data, event lists, inherited DA011 code, correction records, Expert replies or SEC download logs</strong>.</p>
-<p>Consequently, I could not verify point-in-time net income and Q4 subtraction, restatement handling, identity mapping, survivorship, corporate actions and delisting exits, control construction, statistical calculations, or freeze chronology. Matching manifest hashes confirms packet integrity, not calculation correctness or historical timing. “First crosser” is also bounded by the available history and quarter-end observations, rather than verified first-ever eligibility.</p>
-</article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
-</body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <script>location.replace("../../index.html#feed?report=dag005");</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Published SI Alpha Research reports and owner reviews.">
+  <title>SI / Research Workbench</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../components.css">
+  <link rel="stylesheet" href="../../feed.css">
+  <link rel="stylesheet" href="../../documents.css">
+  <script type="module" src="../../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><div class="boot"><b>SI</b><p>Loading Fieldnotes…</p></div></div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Search research"><div id="search-content"></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Research document"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

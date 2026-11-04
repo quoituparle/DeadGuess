@@ -1,48 +1,23 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
-<title>DA007 — Dated symbol map with a causal fallback | SI Alpha Research</title>
-<link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
-<main class="wrap"><a class="back" href="../../da.html">← DA Reports</a>
-<article class="report"><header><h1>DA007 — Dated symbol map with a causal fallback</h1><div class="meta"><span class="id">DA007</span><time datetime="2026-11-04">Nov 4, 2026</time><span>2 min read</span></div></header>
-
-<p><strong>The dated filer-to-symbol map now qualifies as a development identity route for a 2016-2024 DAG001 replication. On the seven cached quarter ends it names the company's ticker for 91.7% of the listed universe on average, at least 87.3% in every window, with 99.3% precision. At least 91.6% of nonfinancial filers resolve at every quarter end from 2016 to 2024. No prices or returns were read, and no external request was made. This qualifies an input. It says nothing about the strategy.</strong></p>
-<h2>Results</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Criterion</th>
-<th>Result</th>
-<th>Required</th>
-<th>Pass</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>C5 recall</td>
-<td>mean 0.917, minimum 0.873 (2026-06-30)</td>
-<td>0.90 and 0.85</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>C6 precision</td>
-<td>0.993</td>
-<td>0.95</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>C7 historical resolved share</td>
-<td>lowest 0.916 (2024-09-30); yearly lows 0.973 (2016) to 0.982 (2020), 0.953 (2022), 0.925 (2023)</td>
-<td>at least 0.824</td>
-<td>yes</td>
-</tr>
-</tbody></table></div>
-<p>DA006's rule used only each filing's own file-name prefix. R3 adds a fallback: when a filing has a filing agent's file name, use the prefix of the same company's latest ticker-form filing accepted before the formation, then follow dated name changes. A ticker is also now correct when it is any share class of the same company. Against DA006, the unresolved count per gold window falls from 143-359 to 88-240.</p>
-<p>The fallback is less accurate than a filing's own prefix. In the gold windows it adds 87 to 115 correct names but 18 to 26 wrong ones, a hit rate near 80%. It matters most in 2021-2022, where it supplies about 35% of resolutions (1,625 of 4,505 resolved filers at 2021-12-31). So the error rate in those years is probably higher than the gold measure shows.</p>
-<h2>Limits</h2>
-<p>The rule was chosen after DA006's results on the same gold windows, so this is a development measure, not an independent one. Accuracy before 2024 is inferred from coverage. A replication should therefore treat a resolved symbol as confirmed only when it has traded bars at the formation and no other filer resolves to it. Historical counts include unlisted filers, which the replication's price and liquidity filters remove.</p>
-<h2>Next decision</h2>
-<p>Per the frozen stop rule, the next step is a frozen 2016-2024 DAG001 replication plan with sector-matched cells, reviewed by Expert before any price is read. Quarter-end prices for about 35 formations would be new Alpaca requests and need the owner's approval.</p>
-</article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer></body></html>
+<html lang="en" data-theme="light">
+<head>
+  <script>location.replace("../../index.html#feed?report=da007");</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Published SI Alpha Research reports and owner reviews.">
+  <title>SI / Research Workbench</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../components.css">
+  <link rel="stylesheet" href="../../feed.css">
+  <link rel="stylesheet" href="../../documents.css">
+  <script type="module" src="../../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><div class="boot"><b>SI</b><p>Loading Fieldnotes…</p></div></div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Search research"><div id="search-content"></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Research document"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

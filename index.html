@@ -1,18 +1,22 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
-<title>Owner Reports · Fieldnotes | SI Alpha Research</title>
-<link rel="stylesheet" href="assets/site.css">
-<script src="assets/search.js" defer=""></script>
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="index.html">Fieldnotes</a></div></header>
-<main class="wrap"><div class="intro"><h1>Fieldnotes</h1><p class="muted">Browse research reports and their findings.</p></div>
-<nav class="tabs" aria-label="Report collections"><a href="index.html" aria-current="page">Owner Reports<span class="count">5</span></a><a href="da.html">DA Reports<span class="count">14</span></a><a href="eq.html">EQ Reports<span class="count">7</span></a></nav>
-
-<section class="owner-library" aria-labelledby="owner-heading"><header><div><h2 id="owner-heading">Owner Reports</h2><p class="status" aria-live="polite">5 reports</p></div><form class="search" role="search" hidden=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><label class="sr-only" for="q">Search Owner Reports</label><input id="q" name="q" type="search" placeholder="Search owner reports"></form></header><div class="owner-groups"><section class="owner-group"><h3>EQ Guesses <small>1</small></h3><ul><li class="entry"><a href="reports/eqg001/"><span class="owner-label"><strong class="id">EQG001</strong><span>Documented public-rule sell concordance</span></span><span class="read-label">Read report <span aria-hidden="true">↗</span></span></a></li></ul></section><section class="owner-group"><h3>DA Guesses <small>4</small></h3><ul><li class="entry"><a href="reports/dag005/"><span class="owner-label"><strong class="id">DAG005</strong><span>Index eligibility crossing</span></span><span class="read-label">Read report <span aria-hidden="true">↗</span></span></a></li><li class="entry"><a href="reports/dag004/"><span class="owner-label"><strong class="id">DAG004</strong><span>Cured late filers</span></span><span class="read-label">Read report <span aria-hidden="true">↗</span></span></a></li><li class="entry"><a href="reports/dag003/"><span class="owner-label"><strong class="id">DAG003</strong><span>Engaged holder short side feasibility</span></span><span class="read-label">Read report <span aria-hidden="true">↗</span></span></a></li><li class="entry"><a href="reports/dag002/"><span class="owner-label"><strong class="id">DAG002</strong><span>Engaged holder resolution</span></span><span class="read-label">Read report <span aria-hidden="true">↗</span></span></a></li></ul></section></div><p id="empty" hidden="">No reports match your search.</p></section>
-
-
-
-
-</main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
-</body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Published SI Alpha Research reports and owner reviews.">
+  <title>SI / Research Workbench</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./components.css">
+  <link rel="stylesheet" href="./feed.css">
+  <link rel="stylesheet" href="./documents.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><div class="boot"><b>SI</b><p>Loading Fieldnotes…</p></div></div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Search research"><div id="search-content"></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Research document"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

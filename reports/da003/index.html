@@ -1,73 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
-<title>DA003 — Engaged holder short check | SI Alpha Research</title>
-<link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
-<main class="wrap"><a class="back" href="../../da.html">← DA Reports</a>
-<article class="report"><header><h1>DA003 — Engaged holder short check</h1><div class="meta"><span class="id">DA003</span><time datetime="2026-11-04">Nov 4, 2026</time><span>2 min read</span></div></header>
-
-<p><strong>No pass. Stocks with a fund's initial 13D really do trail matched stocks, but they already trailed before the filing and do not fade by Q+4, so this is persistent selection rather than month-scale event alpha. The liquid short leg failed the frozen market-slope gate by 0.0015. This is conditional spread evidence on exposed development data, with no short ledger, and it is not Alpha.</strong></p>
-<p>DA002 lost 6.04% a quarter buying fund-like initial 13D subjects. On 2026-11-03 the owner authorized short-sale research, so this round asked two questions. Was that loss real or an artifact of the benchmark? If it was real, could a short capture it? The round reused DA002's frozen events and seven windows (the rebuild matched DA002's event hash) and removed 7 names whose listed filer had been taken for the subject. External requests: 0.</p>
-<h2>Results</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Gate</th>
-<th>Rule</th>
-<th>Observed</th>
-<th>Pass</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>S1</td>
-<td>Clean names rank below their cell median in Q+1</td>
-<td>44.8th percentile, permutation p 0.004, 6 of 7 windows</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>S2</td>
-<td>More bottom-5% hits than chance</td>
-<td>9.0% vs 5.4% null, p 0.015 (corrected)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>S3</td>
-<td>Inverted names, with no event in their own stock, do not lag</td>
-<td>49.9, p 0.49</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>S4</td>
-<td>Liquid short spread after 3%/yr borrow</td>
-<td>+2.30% a quarter, 5 of 7 windows</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>S5</td>
-<td>Liquid spread slope on the universe within ±0.25</td>
-<td>−0.2515</td>
-<td><strong>no</strong></td>
-</tr>
-<tr>
-<td>S6</td>
-<td>Q+1 shortfall above Q+3 and Q+4</td>
-<td>5.35 vs 4.66 points</td>
-<td>yes</td>
-</tr>
-</tbody></table></div>
-<p>The loss is not a benchmark artifact. Clean names collect more bad outcomes and fewer big winners (3.4% top-5% hits) than their cells, and the inverted names do not lag. It is not an event effect either. Two quarters before the filing, the same names already ranked at the 44.3rd percentile (p 0.018). In the filing quarter they ranked at 52.5. Through Q+4 the ranks run 44.7, 42.9, 46.5 and 44.1, so there is no month-scale fade. The fund-filer group does not clearly differ from the clean non-fund group, which ranks at 47.2.</p>
-<p>The money sits in thin names: +4.49% a quarter, positive in 7 of 7 windows. Those small issuers with new 5% holders are where borrow is scarce and expensive, and the activation requires borrow evidence before any funded claim. The liquid leg returns +2.30% with a t of about 0.7, and every leave-one-window-out mean stays positive, from +0.62% to +4.66%. It depends on removing the inverted large financials, and it has only 71 names.</p>
-<h2>Limits</h2>
-<ul>
-<li><strong>Quarterly data.</strong> Prices are quarter-end closes without dividends. Borrow is a proxy at 0.5% or 3% a year, and margin, recall and Rule 201 are not modelled.</li>
-<li><strong>Liquid tier.</strong> It uses one day's dollar volume with no market-cap floor.</li>
-<li><strong>Pre-filing check.</strong> It drops 28% of names and is biased upward, so it is a diagnostic only.</li>
-<li><strong>Negative control.</strong> It holds 43 mostly large names, so it has little power.</li>
-<li><strong>Inversion flag.</strong> It reads later indexes, a small identity look-ahead.</li>
-<li><strong>Post-result corrections.</strong> Expert's audit found no defect that changes a gate. correction record records the S2 null and flag corrections.</li>
-</ul>
-<p>Evidence: study plan, short-side check script, study results, tail and missing-data audit, expert response. Source revision for the run: 4930e70.</p>
-</article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
-</body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <script>location.replace("../../index.html#feed?report=da003");</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Published SI Alpha Research reports and owner reviews.">
+  <title>SI / Research Workbench</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../components.css">
+  <link rel="stylesheet" href="../../feed.css">
+  <link rel="stylesheet" href="../../documents.css">
+  <script type="module" src="../../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><div class="boot"><b>SI</b><p>Loading Fieldnotes…</p></div></div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Search research"><div id="search-content"></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Research document"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

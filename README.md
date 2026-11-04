@@ -1,12 +1,15 @@
 # SI Alpha Research Fieldnotes
 
-Static GitHub Pages archive. The homepage opens Owner Reports, with separate
-DA and EQ indexes and a direct link for every report.
+A static public edition of the SI Alpha Research Workbench.
 
-The archive contains exported Markdown reports as HTML. The publication scope
-is the Workbench Owner Reports collection, DA reports, and EQ reports from
-EQ124 onward. Related machine-readable evidence, internal links, and raw inputs
-are outside the site. Each published report has a stable URL under `reports/`.
+The site uses the original Fieldnotes interface, styles, report reader,
+saved reports, filters, theme controls and PDF export. Owner Reports is the
+default view. The public archive contains owner reviews, DA reports and
+research reports from EQ124 onward.
 
-GitHub Pages publishes the root of the `main` branch. No build or runtime
-service is required.
+Internal filenames and directory references in report text use descriptive
+names. The public edition includes 26 reports in a fixed publication snapshot.
+
+GitHub Pages publishes the root of the main branch. The site reads its static
+archive in the browser and requires no backend or build step. Existing report
+URLs open the matching document in the original reader.

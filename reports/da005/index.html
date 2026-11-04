@@ -1,57 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
-<title>DA005 — Alpaca Basic history coverage for DAG001 | SI Alpha Research</title>
-<link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
-<main class="wrap"><a class="back" href="../../da.html">← DA Reports</a>
-<article class="report"><header><h1>DA005 — Alpaca Basic history coverage for DAG001</h1><div class="meta"><span class="id">DA005</span><time datetime="2026-11-04">Nov 4, 2026</time><span>4 min read</span></div></header>
-
-<p><strong>The free Alpaca Basic account can supply 2016-2024 prices but not a point-in-time identity, so DAG001 stays blocked on data. Daily bars start on 2016-01-04. All 12 delisted test names trade until their known final day. Raw bars move by the split factor across all six known splits. But bars are keyed by today's symbol. Renamed companies' history sits under the current ticker, reused tickers carry other securities, and the asset list has no CIK, CUSIP or dates. This is a feasibility check with no returns computed. It is not a performance Batch.</strong></p>
-<p>DAG001's two no-pass rounds share six or seven exposed windows, and Expert asked for a longer history. A replication needs survivorship-free quarter-end closes from 2016 and a way to join each SEC filer to the right price series at each date. The prices pass that test. The join does not.</p>
-<h2>Coverage</h2>
-<div class="table-scroll" tabindex="0"><table>
-<thead>
-<tr>
-<th>Criterion</th>
-<th>Result</th>
-<th>Pass</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>C1 history from 2016</td>
-<td>first bar 2016-01-04, AAPL and GE complete in the first week</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>C2 delisted names trade to their end</td>
-<td>LNKD 2016-12-07, MON 2018-06-06, RHT 2019-07-08, CELG 2019-11-20, XLNX 2022-02-11, CTXS 2022-09-29, TWTR 2022-10-27, ATVI 2023-10-12, SIVB 2023-03-09, FRC 2023-04-28, BBBY 2023-05-02, SHLD 2018-10-23</td>
-<td>yes, on traded bars</td>
-</tr>
-<tr>
-<td>C3 renames continuous</td>
-<td>no gap; FB, UTX, SYMC, NLOK and DWDP return nothing, and their history is under META, RTX, GEN and DD; YHOO and AABA keep separate symbols</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>C4 raw bars unadjusted</td>
-<td>pre/post close 3.87 (AAPL 4:1), 4.44 and 3.01 (TSLA 5:1, 3:1), 4.04 (NVDA 4:1), 19.61 (AMZN 20:1), 0.129 (GE 1:8)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>C5 dated identity route</td>
-<td>asset list: 19,158 inactive and 14,395 active symbols, no CIK, CUSIP or dates, 12 of 28 test symbols absent; FSDS instance prefix equals the dated ticker for 77.6% (2025q1) and 73.8% (2025q4) of filers, against 90% required</td>
-<td>no</td>
-</tr>
-</tbody></table></div>
-<p>Two traps would bias a naive replication. After a name stops trading, Alpaca keeps emitting zero-volume bars at its last price: MON has 791 of them, running into 2022. Later, a reused symbol carries a different security: MON from 2021-03-16, and SHLD from 2020-11-06 and again from 2023-09-14, when it became an ETF. Marks must come only from traded bars, and a restart is a new security (correction record). History filed under the current ticker also mixes predecessors: DD's bars run back through the DowDuPont period, with the 2019 separation recorded as a reverse split, so its 2016-2019 bars belong to predecessor entities.</p>
-<p>The corporate-actions endpoint helps with identity. One call returned dated name changes with CUSIPs (FB to META on 2022-06-09, UTX to RTX, NLOK to GEN), cash and stock mergers with effective dates, splits and spin-offs. The FSDS prefix misses are mostly a former ticker that the filer kept as its file prefix (REVV for RVTY, NCR for VYX, JEC for J). So the prefix, carried forward through dated name changes, is a plausible route to a dated map, but it has not reached 90% here.</p>
-<h2>Power for the replication</h2>
-<p>DA004's L0 window net excess has a standard deviation of 5.2%. With about 35 quarter-end windows, a window-clustered t of 2 needs a mean near 1.8% a quarter. At a true +1.09%, the chance of reaching t 2 is about 22%. Expert's condition therefore applies: unless matching on sector or another control cuts that dispersion, even the full history is unlikely to settle DAG001.</p>
-<h2>Method and limits</h2>
-<p>The study-local client sent only GET requests to three fixed paths on two Alpaca hosts, with no redirects or retries and 0.35 s pacing. It used 8 of 40 reserved attempts, all HTTP 200, 18.95 MB in total. Raw bytes are kept outside Git in the research cache and hashed in the request log. The 28 symbols and their events were fixed from memory before any request. The SIP feed was accepted on the Basic plan for these dates, which says nothing about intraday or recent data. No return, signal or rank was computed. Raw bars for these 28 symbols are now seen, which lightly exposes them for a later replication. The FSDS prefix test used cached 2025 files only, so its rate for 2016-2019 filers is unknown.</p>
-<h2>Next decision</h2>
-<p>The owner chooses the identity route. The smallest request is about 37 quarterly SEC Financial Statement Data Sets files for 2015q4 to 2024q4, which are free and need no account, plus paginated Alpaca corporate actions for all symbols from 2016 to 2024, an estimated 20 to 60 calls. With those, a returns-blind map from each filer's instance prefix, carried through dated name changes, to a traded Alpaca series would be built and measured against the 90% bar. The paid Massive plan, which has dated ticker reference data, is the alternative and is not authorized. Only after the map qualifies would a frozen replication with sector-matched cells go to Expert, before any return is read.</p>
-</article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
-</body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <script>location.replace("../../index.html#feed?report=da005");</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Published SI Alpha Research reports and owner reviews.">
+  <title>SI / Research Workbench</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../components.css">
+  <link rel="stylesheet" href="../../feed.css">
+  <link rel="stylesheet" href="../../documents.css">
+  <script type="module" src="../../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><div class="boot"><b>SI</b><p>Loading Fieldnotes…</p></div></div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Search research"><div id="search-content"></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Research document"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
