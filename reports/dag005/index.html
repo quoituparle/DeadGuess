@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
 <title>DAG005: index eligibility crossing | SI Alpha Research</title>
 <link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>SI Alpha Research</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
+</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
 <main class="wrap"><a class="back" href="../../index.html">← Owner Reports</a>
-<article class="report"><header><h1>DAG005: index eligibility crossing</h1><div class="meta"><span class="id">DAG005</span><span>7 min read</span></div></header>
+<article class="report owner-report"><header><h1>DAG005: index eligibility crossing</h1><div class="meta"><span class="id">DAG005</span><span>7 min read</span></div></header>
 
 <p><strong>Status:</strong> dead. Expert, 2026-11-04. The mechanism failed where it could be tested at scale: 2,157 crossing filings above 1 billion USD earned +0.04% gross over 63 sessions (upper 95% bound near +1.6%) and -0.35%/q at quarter-end entry, with no dependence on the size floor. Scope: S&amp;P GAAP-earnings crossers worth at least 1 billion USD, 2017-2024, quarter-end or post-filing entry. Excess above about 1.6% per 63 sessions is ruled out. First crossers (about 10 a year, 80 events) and non-member crossers are undetermined: too few, or index membership data is missing.</p>
 <p><strong>Guess:</strong> A company that newly meets the S&amp;P GAAP earnings rule (positive trailing four-quarter and latest-quarter net income) while above the index size floor becomes eligible for index inclusion; rule-bound and anticipating buyers arrive over later rebalances, so its stock earns excess return that fades over months, while crossers below the floor do not.</p>
@@ -23,25 +22,25 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>da012_profitability_crossing_screen</td>
+<td>DA012</td>
 <td>initial</td>
 <td align="right">2</td>
 <td>First round: first GAAP-profitability crossers (trailing four-quarter and latest-quarter net income turning positive) with market cap of at least 1 billion USD, against dollar-volume and prior-return cells, quarter-end entry, 30 windows 2017-2024 on DA011's panel; crossers worth 100 million to 1 billion USD as placebo.</td>
 </tr>
 <tr>
-<td>da013_crossing_event_time</td>
+<td>DA013</td>
 <td>returns</td>
 <td align="right">2</td>
 <td>Second round: event-time entry at the first close after the crossing filing's acceptance, 63-session matched excess against same-cell controls over identical sessions, 2,157 X0 and 1,290 B0 filings 2017-2024.</td>
 </tr>
 <tr>
-<td>da014_first_crossers</td>
+<td>DA014</td>
 <td>expert</td>
 <td align="right">0</td>
 <td>Third round per Expert: DA013's crossing filings restricted to first crossers (known ineligible at the eight prior quarter ends and never eligible before), with a returns-blind event count against a declared minimum.</td>
 </tr>
 <tr>
-<td>da015_first_crossers_longer_history</td>
+<td>DA015</td>
 <td>data</td>
 <td align="right">0</td>
 <td>Fourth round: DA014's first-crosser filter with SEC FSDS 2012q1-2015q3 added for the eight-quarter lookback (15 owner-approved requests).</td>
@@ -64,25 +63,25 @@
 </thead>
 <tbody><tr>
 <td>1</td>
-<td><code>da012_profitability_crossing_screen</code></td>
+<td>DA012</td>
 <td>Quarter-end entry; crossers ≥ $1B (X0) vs dollar-volume × prior-return cells; $100M-$1B placebo (B0); 30 windows (initial)</td>
 <td>No pass. X0 -0.35%/q, percentile 50.9 (t 1.2), intercept t -0.3; B0 -3.1%/q</td>
 </tr>
 <tr>
 <td>2</td>
-<td><code>da013_crossing_event_time</code></td>
+<td>DA013</td>
 <td>Entry at the first close after the crossing filing, 63 sessions vs same-cell controls (returns)</td>
 <td>No pass. X0 +0.04% gross, -0.63% net (t -0.8), percentile 50.6; B0 slightly better</td>
 </tr>
 <tr>
 <td>3</td>
-<td><code>da014_first_crossers</code></td>
+<td>DA014</td>
 <td>First crossers only, per Expert (expert)</td>
 <td>Data block: 88 events, below the declared 100; no returns</td>
 </tr>
 <tr>
 <td>4</td>
-<td><code>da015_first_crossers_longer_history</code></td>
+<td>DA015</td>
 <td>Same, with 15 owner-approved FSDS files for 2012q1-2015q3 (data)</td>
 <td>Data block: 80 events; no returns</td>
 </tr>
@@ -167,7 +166,8 @@
 <li><strong>Reporting:</strong> DA012 contains short-oriented fields alongside long-oriented outputs, including opposite signs for the percentile t-statistic. I used the explicit long fields and gate records; the missing code prevents reconciliation.</li>
 </ul>
 <h2>Could not check</h2>
-<p>Despite the brief, the packet contains <strong>no <code>scripts/</code>, <code>SUMMARY.json</code>, raw data, event lists, inherited DA011 code, correction records, Expert replies or SEC download logs</strong>.</p>
+<p>Despite the brief, the packet contains <strong>no study scripts, study summary, raw data, event lists, inherited DA011 code, correction records, Expert replies or SEC download logs</strong>.</p>
 <p>Consequently, I could not verify point-in-time net income and Q4 subtraction, restatement handling, identity mapping, survivorship, corporate actions and delisting exits, control construction, statistical calculations, or freeze chronology. Matching manifest hashes confirms packet integrity, not calculation correctness or historical timing. “First crosser” is also bounded by the available history and quarter-end observations, rather than verified first-ever eligibility.</p>
 </article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer></body></html>
+<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
+</body></html>

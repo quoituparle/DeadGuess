@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
 <title>DAG003: Engaged holder short side feasibility | SI Alpha Research</title>
 <link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>SI Alpha Research</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
+</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
 <main class="wrap"><a class="back" href="../../index.html">← Owner Reports</a>
-<article class="report"><header><h1>DAG003: Engaged holder short side feasibility</h1><div class="meta"><span class="id">DAG003</span><span>6 min read</span></div></header>
+<article class="report owner-report"><header><h1>DAG003: Engaged holder short side feasibility</h1><div class="meta"><span class="id">DAG003</span><span>6 min read</span></div></header>
 
 <p><strong>Status:</strong> dead. Expert, 2026-11-03. The shortfall is real but is not month-scale event alpha. The scope is a short basket of broad fund-like initial 13D subjects with inversions removed, entered at quarter ends, over seven exposed windows. The names already trailed two quarters before the filing and do not fade through Q+4, so this is persistent selection. Value as month-scale alpha is ruled out at this scope. Whether the thin-name shortfall survives borrow costs could not be determined, because borrow data is missing.</p>
 <p><strong>Guess:</strong> The DAG002 shortfall of fund-like initial 13D subjects is a real loss, not a benchmark artifact, and it can be captured by a short that pays over the months after the filing.</p>
@@ -23,7 +22,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>da003_engaged_holder_short_check</td>
+<td>DA003</td>
 <td>returns</td>
 <td align="right">3</td>
 <td>First round: the short side of DA002's fund-like initial 13D subjects, using within-cell ranks, tail rates, an inverted-name negative control, a pre-filing check and a liquid-tier short spread with adverse borrow, on DA002's frozen events and windows.</td>
@@ -87,21 +86,21 @@
 <li><strong>Pre-filing check.</strong> It is selected and biased upward.</li>
 <li><strong>Negative control.</strong> It is weak.</li>
 <li><strong>Inversion flag.</strong> It is not point-in-time.</li>
-<li><strong>Ledger.</strong> The session ledger lacks the per-trial results, as DA003 <code>control/CORRECTION_002.json</code> records.</li>
+<li><strong>Ledger.</strong> The session ledger lacks the per-trial results, as DA003 correction record records.</li>
 </ul>
 <h2>Evidence</h2>
-<p>The evidence is in <code>da003_engaged_holder_short_check/</code>:</p>
+<p>The evidence is in DA003:</p>
 <ul>
-<li><code>PLAN.json</code></li>
-<li><code>REPORT.md</code></li>
-<li><code>evidence/RESULTS.json</code></li>
-<li><code>evidence/TAIL_NULL_AUDIT.json</code></li>
-<li><code>control/CORRECTION_001.json</code> and <code>control/CORRECTION_002.json</code></li>
-<li><code>control/EXPERT_REPLY_001.md</code></li>
+<li>study plan</li>
+<li>study report</li>
+<li>study results</li>
+<li>tail and missing-data audit</li>
+<li>correction record and correction record</li>
+<li>expert response</li>
 </ul>
 <p>Run revision: 4930e70.</p>
 <h2>Problem</h2>
-<p>Everything is exposed development data, and the short direction was chosen after DA002 lost money. There is no short ledger, and borrow costs are proxies. The liquid tier uses dollar volume with no market-cap floor. The pre-filing check drops 28% of names and is biased upward. The negative control has 43 mostly large names. The inversion flag reads later indexes. The S5 gate had little power on seven points, and the verdict does not rest on it. Per-trial results are missing from the session ledger (DA003 control/CORRECTION_002.json).</p>
+<p>Everything is exposed development data, and the short direction was chosen after DA002 lost money. There is no short ledger, and borrow costs are proxies. The liquid tier uses dollar volume with no market-cap floor. The pre-filing check drops 28% of names and is biased upward. The negative control has 43 mostly large names. The inversion flag reads later indexes. The S5 gate had little power on seven points, and the verdict does not rest on it. Per-trial results are missing from the session ledger (DA003 correction record).</p>
 <h2>Next</h2>
 <p>None for this Guess. A revival would be a new Guess naming DAG003. It suits a slower line, and its cheapest kill test is a share-issuance control in the cells, if cached SEC share counts cover these names. A funded thin-name short would need historical borrow fees, which means new requests the owner must approve. Filing-text activism and filing-date entry remain untested.</p>
 <hr>
@@ -109,20 +108,20 @@
 <p>Reviewer: codex. Generated: 2026-11-04T00:17:47+00:00.</p>
 <h2>Reading of the evidence</h2>
 <p><strong>The packet supports relative underperformance in an exposed sample; it does not establish a capturable outright short profit. The specification fails its frozen advancement rule.</strong></p>
-<p>Verified from [RESULTS.json]([local path]):</p>
+<p>Verified from [study results]([local path]):</p>
 <ul>
 <li>C0’s 233 observations have a mean within-cell percentile of <strong>44.81</strong>, below 50 in <strong>6/7 windows</strong>, with reported permutation p = <strong>0.0036</strong>. Its 21 bottom-tail hits (9.01%) suggest more than merely missing extreme winners.</li>
 <li>N0 is near neutral: percentile <strong>49.88</strong>, p = <strong>0.488</strong>, across 43 observations. This satisfies S3, though nonsignificance in a small control does not establish absence of benchmark bias.</li>
 <li>L0’s adverse-borrow spread averages <strong>+2.30% per quarter</strong>, positive in <strong>5/7 windows</strong>; doubling transaction costs leaves <strong>+1.80%</strong>. These are benchmark-relative spreads. They do not show that the shorted stocks fell outright.</li>
-<li><strong>S5 fails:</strong> slope <strong>−0.251474</strong>, outside the registered [−0.25, 0.25] range. The miss is economically small, but the [PLAN.json]([local path]) requires stopping if any S1–S5 gate fails.</li>
+<li><strong>S5 fails:</strong> slope <strong>−0.251474</strong>, outside the registered [−0.25, 0.25] range. The miss is economically small, but the [study plan]([local path]) requires stopping if any S1–S5 gate fails.</li>
 <li>S6 passes narrowly: Q+1 percentile shortfall <strong>5.35 points</strong>, versus <strong>4.66</strong> averaged across Q+3/Q+4. Q+4’s percentile is still <strong>44.14</strong>. I infer only weak evidence of decay, not a clearly temporary effect.</li>
 </ul>
 <p>These checks establish consistency between the supplied tables and decision rule, not independent verification of the estimates.</p>
 <h2>Route and overfitting</h2>
-<p>[MANIFEST.json]([local path]) lists <strong>one round</strong>, <code>reason_class: returns</code>, with <strong>three registered variants: C0, N0 and L0</strong>. This is development: the short direction followed DAG002’s disappointing long returns, and all seven windows were already exposed. The additional diagnostics are disclosed in the plan; they are not independent validation.</p>
-<p>[FREEZE_EVENTS.json]([local path]) records counts and hashes with <code>returns_joined: false</code>. That supports a documented freeze, but cannot undo prior return exposure or independently establish chronology.</p>
-<p>[CORRECTION_001.json]([local path]), classified <code>expert</code>, reports a post-result correction to the discrete tail null: <strong>5.37%</strong>, rather than 5%, raising S2’s p-value from <strong>0.007 to 0.015</strong>. Gates remain unchanged. This appears to be a legitimate statistical correction.</p>
-<p>[CORRECTION_002.json]([local path]), classified <code>bug</code>, concerns failed result recording. It reports no changes to evidence, gates or parameters. <strong>Nothing supplied suggests this bug label conceals retuning</strong>, although the underlying ledger is absent.</p>
+<p>[source manifest]([local path]) lists <strong>one round</strong>, <code>reason_class: returns</code>, with <strong>three registered variants: C0, N0 and L0</strong>. This is development: the short direction followed DAG002’s disappointing long returns, and all seven windows were already exposed. The additional diagnostics are disclosed in the plan; they are not independent validation.</p>
+<p>[frozen event definition]([local path]) records counts and hashes with <code>returns_joined: false</code>. That supports a documented freeze, but cannot undo prior return exposure or independently establish chronology.</p>
+<p>[correction record]([local path]), classified <code>expert</code>, reports a post-result correction to the discrete tail null: <strong>5.37%</strong>, rather than 5%, raising S2’s p-value from <strong>0.007 to 0.015</strong>. Gates remain unchanged. This appears to be a legitimate statistical correction.</p>
+<p>[correction record]([local path]), classified <code>bug</code>, concerns failed result recording. It reports no changes to evidence, gates or parameters. <strong>Nothing supplied suggests this bug label conceals retuning</strong>, although the underlying ledger is absent.</p>
 <h2>Validity</h2>
 <ul>
 <li><strong>Look-ahead:</strong> Correction 001 acknowledges that inversion flags read master indexes after formation, affecting seven V0 names. Their impact was not measured; C0’s identity filter is therefore not fully point-in-time.</li>
@@ -132,7 +131,8 @@
 <li><strong>Execution:</strong> Borrow charges and cost sensitivity are useful screening assumptions. Dollar volume of $20 million is only a borrowability proxy. Margin, collateral, recalls, dividends and fills are unmodelled, so the spreads do not demonstrate feasibility for the simulated $10,000 account.</li>
 </ul>
 <h2>Could not check</h2>
-<p>All seven listed file hashes match the manifest. However, the packet omits <code>short_check.py</code>, <code>audit_tail_null.py</code>, <code>TAIL_NULL_AUDIT.json</code>, DAG002’s implementation and underlying event/price data, despite references to them.</p>
-<p>The sole supplied script, [test_short_check.py]([local path]), contains tests importing the missing implementation. Consequently, I could not verify matching, return timing, freeze enforcement, corrected tail probabilities, data adjustments or survivorship treatment. I ran no tests or experiments and changed no files.</p>
+<p>All seven listed file hashes match the manifest. However, the packet omits short-side check script, tail and missing-data audit script, tail and missing-data audit, DAG002’s implementation and underlying event/price data, despite references to them.</p>
+<p>The sole supplied script, [short-side checks]([local path]), contains tests importing the missing implementation. Consequently, I could not verify matching, return timing, freeze enforcement, corrected tail probabilities, data adjustments or survivorship treatment. I ran no tests or experiments and changed no files.</p>
 </article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer></body></html>
+<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
+</body></html>

@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
 <title>DAG002: engaged holder resolution | SI Alpha Research</title>
 <link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>SI Alpha Research</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
+</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
 <main class="wrap"><a class="back" href="../../index.html">← Owner Reports</a>
-<article class="report"><header><h1>DAG002: engaged holder resolution</h1><div class="meta"><span class="id">DAG002</span><span>7 min read</span></div></header>
+<article class="report owner-report"><header><h1>DAG002: engaged holder resolution</h1><div class="meta"><span class="id">DAG002</span><span>7 min read</span></div></header>
 
 <p><strong>Status:</strong> dead. Expert, 2026-11-01. Value is ruled out for a long basket of broad initial 13D subjects, entered at quarter ends with filer type read from index names: mean excess is negative at every horizon and in every reported slice. Genuine activism identified from filing text was not tested, so its value is unknown because that data was not read.</p>
 <p><strong>Guess:</strong> A fund crossing 5% with intent to influence pays through outcomes that arrive over months, so matched excess return continues after filing and fades as they resolve.</p>
@@ -23,7 +22,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>da002_engaged_holder_screen</td>
+<td>DA002</td>
 <td>initial</td>
 <td align="right">2</td>
 <td>First round: fund-like initial Schedule 13D subjects against stocks matched on dollar volume and prior return, with a non-fund placebo.</td>
@@ -80,11 +79,11 @@
 <p><strong>Whether the loss is real.</strong> The study report says the shortfall is not an artifact of the comparison, and that is too strong. The candidate's -5.20% sits below all 200 random baskets. However, the median name trails by only 2.45%, 3 of 7 positive, and an equal-weight benchmark penalizes any basket that misses lottery-like winners. The random draw was not stratified by cell. This remains unresolved. It does not change the long decision, because the basket fails at the mean and at the median, but it means no reliable short signal is shown here.</p>
 <p><strong>Other limits.</strong> Blank-check exclusion used the latest SIC, a small unmeasured look-ahead. Filer labels hold activists alongside family vehicles, strategic investors and deal buyers. Matching omits industry, market value and valuation. Prices are quarter-end close proxies without dividends. All data was already exposed. External requests: 0.</p>
 <h2>Evidence</h2>
-<p>The evidence is in <code>da002_engaged_holder_screen/</code>: <code>PLAN.json</code>, <code>REPORT.md</code>, <code>evidence/RESULTS.json</code>, <code>evidence/INVERSION_AUDIT.json</code>, <code>control/CORRECTION_002.json</code> and <code>control/EXPERT_REPLY_001.md</code>. Source revision a194af2; event table sha256 ec761689969e16333e2f0a1a945bc25777e3269162aba7d4fa9e951bf4fe1594.</p>
+<p>The evidence is in DA002: study plan, study report, study results, inversion audit, correction record and expert response. Source revision a194af2; event table sha256 ec761689969e16333e2f0a1a945bc25777e3269162aba7d4fa9e951bf4fe1594.</p>
 <h2>Problem</h2>
 <p>The label is crude: filer type comes from name words, so activists sit with family vehicles and deal buyers. The subject rule let listed filers count as subjects, flagging 7 of 240 V0 positions and 36 of 195 placebo positions, so the placebo is not clean. Whether the loss is a real effect or a benchmark artifact is unresolved, and it does not change the long decision.</p>
 <h2>Next</h2>
-<p>None for this Guess. A study of stated intent from filing text would be a new Guess naming DAG002 and needs new SEC requests. Four cached tests that could separate a real loss from a benchmark artifact are in control/EXPERT_REPLY_001.md, and they matter only if short accounting is built.</p>
+<p>None for this Guess. A study of stated intent from filing text would be a new Guess naming DAG002 and needs new SEC requests. Four cached tests that could separate a real loss from a benchmark artifact are in expert response, and they matter only if short accounting is built.</p>
 <hr>
 <h2>Report from Reviewer</h2>
 <p>Reviewer: codex. Generated: 2026-11-03T18:36:57+00:00.</p>
@@ -125,24 +124,25 @@
 <td>Fail</td>
 </tr>
 </tbody></table></div>
-<p>Source: [RESULTS.json]([local path]).</p>
+<p>Source: [study results]([local path]).</p>
 <p>The shortfall precedes costs: mean gross Q+1 matched excess is <strong>−5.20%</strong>, negative in every window. Every leave-one-window-out mean remains negative; doubled costs worsen the result to <strong>−6.88%</strong>. Thus, neither trading costs nor one bad quarter explains the recorded failure. G4 supplies no evidence of positive alpha fading over months.</p>
-<p>Post-result median excess is less negative (<strong>−2.45%</strong>, positive in 3/7 windows). This suggests return skew affects the magnitude; it does not rescue the registered equal-weight result. [POST_RESULT_INSPECTION.json]([local path])</p>
+<p>Post-result median excess is less negative (<strong>−2.45%</strong>, positive in 3/7 windows). This suggests return skew affects the magnitude; it does not rescue the registered equal-weight result. [post-result inspection record]([local path])</p>
 <h2>Route and overfitting</h2>
-<p>The packet contains <strong>one round</strong>, <code>reason_class: initial</code>, with <strong>two registered variants</strong>: candidate V0 and placebo V1. However, the market-slope gate explicitly followed known DA001 results, and all price paths were previously exposed. This is development evidence, not independent validation. [MANIFEST.json]([local path]), [PLAN.json]([local path])</p>
+<p>The packet contains <strong>one round</strong>, <code>reason_class: initial</code>, with <strong>two registered variants</strong>: candidate V0 and placebo V1. However, the market-slope gate explicitly followed known DA001 results, and all price paths were previously exposed. This is development evidence, not independent validation. [source manifest]([local path]), [study plan]([local path])</p>
 <p>Corrections 001 and 003 are <code>owner</code> naming changes. Correction 002 is an <code>expert</code> audit after evaluation; it adds inspection without changing baskets, gates or results. There are <strong>no recorded <code>returns</code> changes or <code>bug</code> labels</strong>, and no visible bug-labelled retuning. The random baskets, medians, industry breakdown and ex-pharma filter are additional post-result performance looks, beyond the two registered variants.</p>
-<p>The freeze record and evaluation hash check are sensible safeguards against changing events between stages. They cannot establish outcome blindness: the paths were already known, and the full hashed event payload is absent. [FREEZE_EVENTS.json]([local path]), [screen.py]([local path])</p>
+<p>The freeze record and evaluation hash check are sensible safeguards against changing events between stages. They cannot establish outcome blindness: the paths were already known, and the full hashed event payload is absent. [frozen event definition]([local path]), [screening script]([local path])</p>
 <h2>Validity</h2>
 <ul>
 <li><strong>Timing and matching look reasonable locally.</strong> Code excludes formation-day filings and amendments, excludes both event groups from controls, and builds matching cells from formation dollar volume and prior returns. Matching does not establish causal comparability.</li>
-<li><strong>Subject identification is materially flawed.</strong> The sole universe CIK is assumed to be the subject, allowing a listed filer to be selected instead. The audit flags <strong>7/240 V0</strong> and <strong>36/195 V1 name-cohort observations</strong>. Flags are imperfect, not confirmed inversions; nevertheless, V1 is a weak placebo and G5 carries little weight. The correction’s numerical claim that contamination cannot reverse V0 is not independently verifiable from supplied name-level returns. [CORRECTION_002.json]([local path]), [INVERSION_AUDIT.json]([local path])</li>
-<li><strong>Look-ahead is present.</strong> <code>read_issuers</code> uses the last encountered SIC across cached submissions rather than formation-dated SIC. Correction 002 identifies coverage through 2026q3; its effect is unmeasured. [screen.py]([local path])</li>
+<li><strong>Subject identification is materially flawed.</strong> The sole universe CIK is assumed to be the subject, allowing a listed filer to be selected instead. The audit flags <strong>7/240 V0</strong> and <strong>36/195 V1 name-cohort observations</strong>. Flags are imperfect, not confirmed inversions; nevertheless, V1 is a weak placebo and G5 carries little weight. The correction’s numerical claim that contamination cannot reverse V0 is not independently verifiable from supplied name-level returns. [correction record]([local path]), [inversion audit]([local path])</li>
+<li><strong>Look-ahead is present.</strong> <code>read_issuers</code> uses the last encountered SIC across cached submissions rather than formation-dated SIC. Correction 002 identifies coverage through 2026q3; its effect is unmeasured. [screening script]([local path])</li>
 <li><strong>The mechanism is only loosely measured.</strong> Broad name tokens, including “LLC,” do not verify fund status or influence intent. Quarter-end entry can lag filing by 92 days, and no resolution outcomes are measured.</li>
 <li><strong>Execution remains illustrative.</strong> Costs consistently charge 50–100 bp round trip to baskets and none to controls. Gross failure makes costs secondary, but close proxies without dividends, fills or account constraints cannot establish executable $10,000-account performance. Sixteen V0 missing observations receive flat treatment; the reported −100% stress worsens the mean to <strong>−12.72%</strong>.</li>
 <li><strong>Statistical claims should remain limited.</strong> Seven windows and overlapping longer-horizon cohorts provide little precision. The unstratified, unscripted post-result random-basket check does not establish that matching artifacts are absent.</li>
 </ul>
 <h2>Could not check</h2>
-<p>The packet omits raw caches, <code>usinfra.quarter_panel</code>, per-security return paths, original filings and the full frozen event table. I therefore could not independently verify mappings, security types, splits, identity continuation, delisting proceeds, incremental-return construction, freeze chronology or source completeness.</p>
-<p>I also could not reconcile <strong>AGPU’s June 2026 placebo inclusion</strong> with the plan’s quarantine wording; the dated quarantine implementation is absent. [EVENTS.json]([local path])</p>
+<p>The packet omits raw caches, quarterly panel code, per-security return paths, original filings and the full frozen event table. I therefore could not independently verify mappings, security types, splits, identity continuation, delisting proceeds, incremental-return construction, freeze chronology or source completeness.</p>
+<p>I also could not reconcile <strong>AGPU’s June 2026 placebo inclusion</strong> with the plan’s quarantine wording; the dated quarantine implementation is absent. [event table]([local path])</p>
 </article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer></body></html>
+<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
+</body></html>

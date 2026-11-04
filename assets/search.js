@@ -1,6 +1,7 @@
 const form = document.querySelector('.search');
 const input = form.elements.q;
 const rows = [...document.querySelectorAll('.entry')];
+const groups = [...document.querySelectorAll('.owner-group')];
 const status = document.querySelector('.status');
 const empty = document.querySelector('#empty');
 
@@ -12,7 +13,11 @@ function filter() {
     row.hidden = !terms.every(term => text.includes(term));
     if (!row.hidden) count++;
   }
-  status.textContent = count + (count === 1 ? ' report' : ' reports');
+  for (const group of groups) {
+    group.hidden = !group.querySelector('.entry:not([hidden])');
+  }
+  const noun = groups.length ? 'owner report' : 'report';
+  status.textContent = count + ' ' + noun + (count === 1 ? '' : 's');
   empty.hidden = count !== 0;
 }
 

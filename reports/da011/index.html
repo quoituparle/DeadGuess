@@ -1,10 +1,9 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
 <title>DA011 — Cured late filers, short side, 2016-2024 replication (DAG004 round 3) | SI Alpha Research</title>
 <link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>SI Alpha Research</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
+</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
 <main class="wrap"><a class="back" href="../../da.html">← DA Reports</a>
 <article class="report"><header><h1>DA011 — Cured late filers, short side, 2016-2024 replication (DAG004 round 3)</h1><div class="meta"><span class="id">DA011</span><time datetime="2026-11-04">Nov 4, 2026</time><span>3 min read</span></div></header>
 
@@ -16,7 +15,7 @@
 <li><strong>S6:</strong> the borrowable tier lost 0.9% a quarter.</li>
 </ul>
 <p>On the readings declared before the data, the shortfall is persistent selection rather than a month-scale event effect, and a short of large, easy-to-borrow names would not have paid. This is not Alpha.</p>
-<p>One data defect matters. A repair rule I added before events were joined turned SIGM's 2018 liquidating distribution into a 25:1 implied split, so the distribution was credited 25 times over, worth +2,455%. Without the fix, S2 and S4 also fail. The fix (control/CORRECTION_006.json) was found by auditing the largest window outlier after results were read. Both versions are kept; S5 and S6 fail in both.</p>
+<p>One data defect matters. A repair rule I added before events were joined turned SIGM's 2018 liquidating distribution into a 25:1 implied split, so the distribution was credited 25 times over, worth +2,455%. Without the fix, S2 and S4 also fail. The fix (correction record) was found by auditing the largest window outlier after results were read. Both versions are kept; S5 and S6 fail in both.</p>
 <h2>Gates (after CORRECTION_006)</h2>
 <div class="table-scroll" tabindex="0"><table>
 <thead>
@@ -93,4 +92,5 @@
 <h2>Next decision</h2>
 <p>This specification stops. On the declared readings, S1-S3 passing with S5 failing reads as <code>dead</code> for this line, a persistent shortfall rather than month-scale event alpha. The failed S6 separately says the tradable tier earns nothing. DAG004 goes to Expert for its judgment.</p>
 </article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer></body></html>
+<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
+</body></html>

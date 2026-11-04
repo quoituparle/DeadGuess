@@ -1,10 +1,9 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
 <title>DA006 — Dated filer-to-symbol map for DAG001 | SI Alpha Research</title>
 <link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>SI Alpha Research</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
+</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
 <main class="wrap"><a class="back" href="../../da.html">← DA Reports</a>
 <article class="report"><header><h1>DA006 — Dated filer-to-symbol map for DAG001</h1><div class="meta"><span class="id">DA006</span><time datetime="2026-11-04">Nov 4, 2026</time><span>2 min read</span></div></header>
 
@@ -47,8 +46,9 @@
 <p>The prefix alone (R1) has recall 0.874 and precision 0.991, so chaining through Alpaca's 3,492 usable name changes adds only 0.7 points. In each gold window, 143 to 359 universe names have no ticker-form file name, and 115 to 150 get a wrong answer. Of the wrong answers, only 27 to 32 are another listed ticker. The rest are stale or invented mnemonics, such as LVIS for LEVI, ZIONS for ZION, WYN for TNL and TMB for CAG. Share-class roots also miss, for example GOOG for GOOGL and LILA for LILAK.</p>
 <p>The historical pattern is the useful part. Before inline XBRL, almost every filer named its instance file by ticker. From 2019 onward, filing-agent names such as <code>tm2412345</code> spread. So the map is strongest exactly where DAG001 needs new history, in 2016-2020, and weakest in 2021-2023.</p>
 <h2>Method and limits</h2>
-<p>The 33 FSDS files for 2015q4 to 2023q4 (3.05 GB) came from SEC with the owner's stored user agent. Alpaca corporate actions for 2016-01-01 to 2026-11-03 came in 10 pages: 3,719 name changes, 2,068 cash mergers, 3,228 stock mergers and 252 stock-and-cash mergers. All 43 attempts returned HTTP 200, within a reservation of 98. Raw bytes are outside Git under <code>.research_tmp/da006</code>. Only <code>sub.txt</code> was read, and no price, return or signal was touched. The gold truth is Massive's dated mapping on the DA001 liquid universe, which covers 2024-2026 only, so 2016-2023 accuracy is inferred, not measured. The historical counts include unlisted filers.</p>
+<p>The 33 FSDS files for 2015q4 to 2023q4 (3.05 GB) came from SEC with the owner's stored user agent. Alpaca corporate actions for 2016-01-01 to 2026-11-03 came in 10 pages: 3,719 name changes, 2,068 cash mergers, 3,228 stock mergers and 252 stock-and-cash mergers. All 43 attempts returned HTTP 200, within a reservation of 98. Raw bytes are outside Git in the research cache. Only the SEC submissions table was read, and no price, return or signal was touched. The gold truth is Massive's dated mapping on the DA001 liquid universe, which covers 2024-2026 only, so 2016-2023 accuracy is inferred, not measured. The historical counts include unlisted filers.</p>
 <h2>Next decision</h2>
 <p>This rule stops here, with no change after seeing the gold measure. The block is narrow and needs no new request: a filer with a non-ticker file name can borrow the ticker-form prefix of its own earlier filings. A follow-up rule that does this causally, using only filings accepted on or before the formation, is the next test. If that still fails, the remaining route is the paid Massive plan, which has dated ticker reference data.</p>
 </article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer></body></html>
+<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
+</body></html>

@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Selected SI Alpha Research reports and owner reviews.">
 <title>DAG004: cured late filers | SI Alpha Research</title>
 <link rel="stylesheet" href="../../assets/site.css">
-</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>SI Alpha Research</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
+</head><body><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="mark" aria-hidden="true">SI</span>Research Workbench</a><a class="section" href="../../index.html">Fieldnotes</a></div></header>
 <main class="wrap"><a class="back" href="../../index.html">← Owner Reports</a>
-<article class="report"><header><h1>DAG004: cured late filers</h1><div class="meta"><span class="id">DAG004</span><span>9 min read</span></div></header>
+<article class="report owner-report"><header><h1>DAG004: cured late filers</h1><div class="meta"><span class="id">DAG004</span><span>9 min read</span></div></header>
 
 <p><strong>Status:</strong> dead. Expert, 2026-11-04. The mechanism failed, not just a specification. Cured late filers do not recover after the cure; they keep lagging, on exposed 2024-2026 data and on unseen 2016-2024 data. The shortfall was already present before the notice (45.4 percentile, against 45.3 after the cure), so it is a trait of chronically weak names, not an event effect. Scope: NT 10-K and NT 10-Q notices cured within 92 days, quarter-end entry, cells matched on dollar volume and prior return. Month-scale event alpha is ruled out at this scope. A persistent short of thin late filers is outside this line and undetermined, because borrow data is missing.</p>
 <p><strong>Guess:</strong> A late-filing notice (NT 10-K or NT 10-Q) drives mandate- and risk-limited holders out; once the late report is filed the uncertainty is resolved, but the discount clears only over the following months as holders and attention return, so cured late filers earn excess return that fades over months.</p>
@@ -23,19 +22,19 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>da009_late_filer_cure_screen</td>
+<td>DA009</td>
 <td>initial</td>
 <td align="right">2</td>
 <td>First round: long cured late filers (NT 10-K or NT 10-Q in the prior 92 days, every report filed by t-1) against dollar-volume and prior-return cells, seven cached quarter-end windows.</td>
 </tr>
 <tr>
-<td>da010_late_filer_timing</td>
+<td>DA010</td>
 <td>returns</td>
 <td align="right">1</td>
 <td>Second round: the opposite side of DA009, with pre-notice and notice-quarter percentiles of the cured names and short-spread arithmetic under declared borrow fees, on DA009's frozen events.</td>
 </tr>
 <tr>
-<td>da011_late_filer_short_replication</td>
+<td>DA011</td>
 <td>expert</td>
 <td align="right">2</td>
 <td>Third round: frozen 2016-2024 replication of the cured-late-filer short side on unseen history (34 quarter ends, 30 with at least 15 names), with Alpaca daily bars, all corporate actions, I2 identity and Expert-reviewed gates S1-S6.</td>
@@ -58,19 +57,19 @@
 </thead>
 <tbody><tr>
 <td>1</td>
-<td><code>da009_late_filer_cure_screen</code></td>
+<td>DA009</td>
 <td>Long cured late filers vs dollar-volume and prior-return cells, 7 exposed windows (initial)</td>
 <td>No pass, opposite sign: -11.9%/q net, 0 of 7 windows, 40.4th percentile, slope 0.03</td>
 </tr>
 <tr>
 <td>2</td>
-<td><code>da010_late_filer_timing</code></td>
+<td>DA010</td>
 <td>Timing and short side of round 1's names (returns)</td>
 <td>Promising lead. After Expert review (CORRECTION_001) the timing pass is not established, and the liquid spread is +13.2%/q without one outlier</td>
 </tr>
 <tr>
 <td>3</td>
-<td><code>da011_late_filer_short_replication</code></td>
+<td>DA011</td>
 <td>Frozen 2016-2024 short-side replication on unseen history, after two Expert reviews and owner approval of 34 SEC and 1,396 Alpaca requests (expert)</td>
 <td>No pass: S1-S4 replicate after CORRECTION_006; S5 pre-notice and S6 borrowable tier fail</td>
 </tr>
@@ -180,7 +179,7 @@
 <td>Historical replication registered before new returns, according to the records; later corrected after results.</td>
 </tr>
 </tbody></table></div>
-<p>([Manifest]([local path]), each round’s <code>PLAN.json</code>)</p>
+<p>([Manifest]([local path]), each round’s study plan)</p>
 <p>DA011 corrections <strong>001–004</strong>, labelled <code>data</code>, changed acquisition batching, symbol exclusions, split treatment and market-cap inputs. Their recorded timing precedes returns, which limits direct performance tuning, although split repair and share-count substitutions materially change measurement.</p>
 <p>Of the <code>bug</code> corrections, <strong>005</strong> looks like an ordinary indexing fix with no economic change. <strong>006</strong> followed inspection of a losing outlier and materially improved that result. Its explanation is credible: an implied split multiplied shares before crediting a liquidating distribution. This looks more like a data-handling repair than economic retuning, but its new three-day/25% exception was chosen after returns were seen. The corrected evaluation therefore carries development discretion. ([005]([local path]), [006]([local path]))</p>
 <p>The two DA011 freeze records have identical aggregate counts but different event hashes. They establish no aggregate membership-count change; they cannot establish identical constituents or quantify the correction’s full effect.</p>
@@ -193,7 +192,8 @@
 <li><strong>Costs and execution:</strong> DA011 includes declared transaction costs and total-return corporate-action treatment. Nevertheless, liquidity/capitalization thresholds do not demonstrate borrow availability. At 20% annual borrow the broad spread is approximately zero, and the preferred tier already fails at 3%. Close-based spreads lack locates, recalls, margin, financing and an executable account path. ([Plan]([local path]), [results]([local path]))</li>
 </ul>
 <h2>Could not check</h2>
-<p>All supplied files match their manifest hashes. However, despite the brief’s description, the packet omits the production scripts, raw data, constituent tables, identity/split checks, acquisition logs and pre-correction results. Only <code>test_replicate.py</code> is supplied; its assertions cannot demonstrate the absent implementation’s behavior.</p>
+<p>All supplied files match their manifest hashes. However, despite the brief’s description, the packet omits the production scripts, raw data, constituent tables, identity/split checks, acquisition logs and pre-correction results. Only replication tests is supplied; its assertions cannot demonstrate the absent implementation’s behavior.</p>
 <p>Consequently, I could not verify historical identity precision, wrong-security admission, acquisition completeness, actual freeze chronology, correction-wide effects, or return construction. There is also an unresolved provenance gap: the described EDGAR acquisition ends at <strong>2023Q4</strong>, while results include <strong>2024</strong> notice/cure cohorts. The packet does not identify their source. ([Brief]([local path]), [test source]([local path]))</p>
 </article></main>
-<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer></body></html>
+<footer><div class="wrap">SI Alpha Research · Fieldnotes</div></footer>
+</body></html>
