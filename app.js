@@ -6,7 +6,6 @@ import {researchPage, publicationList} from './research.js';
 import {feedPage,feedResults,defaultFeedFilters,relatedEvidence,selectFeed,toggleAll,selectAllLabel,selectionBar,outcomeLabel} from './feed.js';
 import {buildPdf} from './pdf.js';
 import {documentationPage,documentationItems,documentationNavigation,documentOutline} from './documents.js';
-const logoUrl=new URL('./favicon.svg',import.meta.url).href;
 
 const icons = {
   overview:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -156,8 +155,8 @@ function shell(content){
     <label class="project-switch"><select id="project-select" aria-label="Select project">${state.projects.map(p=>`<option value="${esc(p.id)}" ${p.id===state.project?'selected':''}>${esc(p.name)}</option>`).join('')}</select></label>
   </nav>`:'';
   const link=([id,label])=>`<a href="${navUrl(id)}" class="nav-item ${(id==='research'?inResearch:active===id)?'active':''}" ${active===id?'aria-current="page"':''}>${label}${id==='experiments'&&state.data?`<small>${state.data.experiments.length}</small>`:''}</a>`;
-  return `<header class="masthead"><div class="masthead-inner"><button class="icon-button mobile-menu" data-action="menu" aria-label="Toggle navigation">${icon('menu')}</button><a class="brand" href="${navUrl('feed')}" title="DeadGuess: Where trading hypotheses go to die." aria-label="DeadGuess Research Workbench"><img src="${logoUrl}" alt="" width="34" height="34"><span>Research Workbench</span></a>
-    <nav class="site-nav" aria-label="Main navigation"><div class="nav-group">${[['feed','Fieldnotes']].map(link).join('')}</div></nav>
+  return `<header class="masthead"><div class="masthead-inner"><button class="icon-button mobile-menu" data-action="menu" aria-label="Toggle navigation">${icon('menu')}</button><a class="brand" href="${navUrl('feed')}" title="DeadGuess: Where trading hypotheses go to die." aria-label="DeadGuess Research Workbench"><span>Research Workbench</span></a>
+    <nav class="site-nav" aria-label="Main navigation"><div class="nav-group">${[['feed','Fieldnotes']].map(link).join('')}<a class="nav-item" href="https://github.com/quoituparle/DeadGuess" target="_blank" rel="noopener noreferrer">Architecture &amp; Contact ↗</a></div></nav>
     <div class="top-actions"><button class="search-trigger" data-action="search" aria-label="Search research">${icon('search')}<span>Search</span><kbd>Ctrl K</kbd></button><button class="icon-button" data-action="theme" aria-label="Toggle color theme" title="Toggle color theme">${icon('sun')}</button></div></div></header>
     <main id="main" tabindex="-1">${researchNavigation}${content}</main><footer class="page-footer"><span>${icon('lock')} Public · read-only · published results only · simulated capital</span><button class="text-button" data-action="about">About this workbench</button></footer>`;
 }
