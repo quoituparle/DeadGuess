@@ -98,5 +98,5 @@ This repository hosts the public overview and selected research archive for **SI
 
 For **boutique quant funds, prop desks, and family offices** looking to deploy a local-first, anti-overfitting AI research pipeline on proprietary data feeds—or for **commercial licensing, turnkey setup, and Quant AI Infrastructure roles** (based in Canada; authorized for contract & part-time engagements):
 
-- **Contact:** `daiyue.han@outlook.com`
+- **Contact:** `daiyue.han@outlook.com`, [Telegram](https://t.me/CrystalBytes)
 <sub>© 2026 SI Alpha Research. Published research artifacts available for inspection; core engine all rights reserved.</sub>
