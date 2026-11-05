@@ -98,5 +98,5 @@ This repository hosts the public overview and selected research archive for **De
 
 For **boutique quant funds, prop desks, and family offices** looking to deploy a local-first, anti-overfitting AI research pipeline on proprietary data feeds—or for **commercial licensing, turnkey setup, and Quant AI Infrastructure roles** (based in Canada; authorized for contract & part-time engagements):
 
-- **Contact:** `daiyue.han@outlook.com`, [Telegram](https://t.me/CrystalBytes)
+- **Contact:** `owner@deadguess.com`, [Telegram](https://t.me/CrystalBytes)
 <sub>© 2026 DeadGuess Research. Published research artifacts available for inspection; core engine all rights reserved.</sub>
