@@ -6,6 +6,7 @@ import {researchPage, publicationList} from './research.js';
 import {feedPage,feedResults,defaultFeedFilters,relatedEvidence,selectFeed,toggleAll,selectAllLabel,selectionBar,outcomeLabel} from './feed.js';
 import {buildPdf} from './pdf.js';
 import {documentationPage,documentationItems,documentationNavigation,documentOutline} from './documents.js';
+const logoUrl=new URL('./favicon.svg',import.meta.url).href;
 
 const icons = {
   overview:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -155,7 +156,7 @@ function shell(content){
     <label class="project-switch"><select id="project-select" aria-label="Select project">${state.projects.map(p=>`<option value="${esc(p.id)}" ${p.id===state.project?'selected':''}>${esc(p.name)}</option>`).join('')}</select></label>
   </nav>`:'';
   const link=([id,label])=>`<a href="${navUrl(id)}" class="nav-item ${(id==='research'?inResearch:active===id)?'active':''}" ${active===id?'aria-current="page"':''}>${label}${id==='experiments'&&state.data?`<small>${state.data.experiments.length}</small>`:''}</a>`;
-  return `<header class="masthead"><div class="masthead-inner"><button class="icon-button mobile-menu" data-action="menu" aria-label="Toggle navigation">${icon('menu')}</button><a class="brand" href="${navUrl('feed')}"><b>SI</b><span>Research Workbench</span></a>
+  return `<header class="masthead"><div class="masthead-inner"><button class="icon-button mobile-menu" data-action="menu" aria-label="Toggle navigation">${icon('menu')}</button><a class="brand" href="${navUrl('feed')}" title="DeadGuess: Where trading hypotheses go to die." aria-label="DeadGuess Research Workbench"><img src="${logoUrl}" alt="" width="34" height="34"><span>Research Workbench</span></a>
     <nav class="site-nav" aria-label="Main navigation"><div class="nav-group">${[['feed','Fieldnotes']].map(link).join('')}</div></nav>
     <div class="top-actions"><button class="search-trigger" data-action="search" aria-label="Search research">${icon('search')}<span>Search</span><kbd>Ctrl K</kbd></button><button class="icon-button" data-action="theme" aria-label="Toggle color theme" title="Toggle color theme">${icon('sun')}</button></div></div></header>
     <main id="main" tabindex="-1">${researchNavigation}${content}</main><footer class="page-footer"><span>${icon('lock')} Public · read-only · published results only · simulated capital</span><button class="text-button" data-action="about">About this workbench</button></footer>`;
@@ -387,7 +388,7 @@ document.addEventListener('click',async event=>{
   if(action==='next-trades'){state.tradePage++;updateTrades();}
   if(action==='trade-export')exportTrades();
   if(action==='export'){const e=currentExperiment();download(`si-${state.project}-${e.id}.json`,JSON.stringify({schema_version:'1.0',project:state.project,experiment:e,sources:state.data.sources},null,2),'application/json');toast('Experiment and source fingerprints exported');}
-  if(action==='about')modal('<div class="eyebrow">SI / RESEARCH WORKBENCH</div><h2>Fieldnotes</h2><p class="about-copy">Published research reports and owner reviews.<br><br>Browse findings, save reports and export a reading selection.<br>Internal file references use descriptive names in this public edition.</p>');
+  if(action==='about')modal('<div class="eyebrow">DEADGUESS / RESEARCH WORKBENCH</div><h2>Where trading hypotheses go to die.</h2><p class="about-copy">Fieldnotes: published research reports and owner reviews.<br><br>Browse findings, save reports and export a reading selection.<br>Internal file references use descriptive names in this public edition.</p>');
 });
 document.addEventListener('change',event=>{if(event.target.matches('[data-feed-select]')){const id=event.target.dataset.feedSelect;feedSelected=event.target.checked?[...feedSelected,id]:feedSelected.filter(x=>x!==id);updateSelection();return;}if(event.target.matches('[data-compare]')){const id=event.target.dataset.compare;if(event.target.checked){if(state.compare.length>=4){event.target.checked=false;return toast('Compare up to four experiments at a time.');}state.compare.push(id);}else state.compare=state.compare.filter(x=>x!==id);if($('#compare-count'))$('#compare-count').textContent=state.compare.length;}});
 document.addEventListener('chart-range',event=>{state.range=event.detail;state.tradePage=0;render();toast('Range selected. Trades and drawdown are linked.');});

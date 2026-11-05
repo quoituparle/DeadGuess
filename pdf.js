@@ -92,9 +92,9 @@ function articleNodes({item,content,source,outcomeLabel},index,toc){
 
 export function documentDefinition(entries,{failed=[],now=new Date()}={}){
   const many=entries.length>1||failed.length>0;
-  const title=many?`SI Research Fieldnotes — ${entries.length} ${entries.length===1?'study':'studies'}`:entries[0].item.title;
+  const title=many?`DeadGuess Fieldnotes — ${entries.length} ${entries.length===1?'study':'studies'}`:entries[0].item.title;
   const front=many?[
-    {text:'SI RESEARCH WORKBENCH',fontSize:9,bold:true,color:accent,margin:[0,0,0,10]},
+    {text:'DEADGUESS / RESEARCH WORKBENCH',fontSize:9,bold:true,color:accent,margin:[0,0,0,10]},
     {text:'Fieldnotes',fontSize:34,bold:true,margin:[0,0,0,6]},
     {text:`${entries.length} ${entries.length===1?'study':'studies'}  ·  Exported ${now.toISOString().slice(0,10)}  ·  Published research, public edition`,color:muted,margin:[0,0,0,26]},
     ...(failed.length?[{text:`${failed.length} selected ${failed.length===1?'study was':'studies were'} unavailable and left out`,bold:true,color:outcomeColors.negative,margin:[0,0,0,4]},{ul:failed.map(item=>cleanText(item.title)),color:muted,margin:[0,0,0,20]}]:[]),
@@ -103,7 +103,7 @@ export function documentDefinition(entries,{failed=[],now=new Date()}={}){
   ]:[];
   return {
     pageSize:'A4',pageMargins:[56,54,56,54],
-    info:{title,creator:'SI Research Workbench',producer:'SI Research Workbench'},
+    info:{title,creator:'DeadGuess Research Workbench',producer:'DeadGuess Research Workbench'},
     defaultStyle:{font:'Roboto',fontSize:10,lineHeight:1.35,color:'#14161a'},
     styles:{
       title:{fontSize:19,bold:true,lineHeight:1.2,margin:[0,0,0,7]},
@@ -118,7 +118,7 @@ export function documentDefinition(entries,{failed=[],now=new Date()}={}){
 
 export function pdfFileName(entries,now=new Date()){
   const stamp=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
-  if(entries.length>1)return `SI-Fieldnotes-${entries.length}-studies-${stamp}.pdf`;
+  if(entries.length>1)return `DeadGuess-Fieldnotes-${entries.length}-studies-${stamp}.pdf`;
   const slug=String(entries[0]?.item.title||'report').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-+|-+$/g,'').slice(0,80);
   return `${slug||'report'}-${stamp}.pdf`;
 }

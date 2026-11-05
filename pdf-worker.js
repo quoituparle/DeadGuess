@@ -22,7 +22,7 @@ pdfMake.addTableLayouts({
 
 self.onmessage=async({data:definition})=>{
   try{
-    definition.footer=(page,count)=>({columns:[{text:'SI Research Workbench'},{text:`${page} / ${count}`,alignment:'right'}],fontSize:8,color:'#565b66',margin:[56,20,56,0]});
+    definition.footer=(page,count)=>({columns:[{text:'DeadGuess Research Workbench'},{text:`${page} / ${count}`,alignment:'right'}],fontSize:8,color:'#565b66',margin:[56,20,56,0]});
     // Keep a heading on the same page as the text it introduces.
     definition.pageBreakBefore=(node,container)=>Boolean(node.headlineLevel)&&container.getFollowingNodesOnPage().length===0;
     const buffer=await pdfMake.createPdf(definition).getBuffer();
